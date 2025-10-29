@@ -3,7 +3,6 @@ package app.rest.controllers;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -26,21 +25,18 @@ public class MessageController {
 	Logger logger = LoggerFactory.getLogger(MessageController.class);
 	
 	@Autowired
-	private Message message;
+	private Message messageComponent;
 	
 	@POST
  @Path("/getQuote")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	
-	// GAWING DTO
 	public Quote getQuote(
-	        @FormParam("type") String type,
-	        @FormParam("color") String color,
-	        @FormParam("neutered") Boolean neutered,
-	        @FormParam("description") String description) 
+	        QuoteDTO parameterObject)
 	{
-		
+		Quote q = messageComponent.selectQuote(parameterObject.getCategory(), parameterObject.getMessage());
+		return q;
 	}
 }
 	
