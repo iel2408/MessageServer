@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import app.components.Message;
+import app.components.MessageComponent;
 import app.entities.Quote;
 
 
@@ -25,10 +25,10 @@ public class MessageController {
 	Logger logger = LoggerFactory.getLogger(MessageController.class);
 	
 	@Autowired
-	private Message messageComponent;
+	private MessageComponent messageComponent;
 	
 	@POST
- @Path("/getQuote")
+	@Path("/getQuote")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	

@@ -7,7 +7,7 @@ import app.entities.Quote;
 import app.repositories.QuoteRepository;
 
 @Component
-public class Message {
+public class MessageComponent {
 	
 	@Autowired
 	private QuoteRepository repo;
