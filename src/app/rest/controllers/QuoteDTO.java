@@ -4,6 +4,8 @@ public class QuoteDTO {
 	private String category;
 	private String message;
 
+	public QuoteDTO() {}
+	
 	public QuoteDTO(String category, String message) {
 		this.category = category;
 		this.message = message;
